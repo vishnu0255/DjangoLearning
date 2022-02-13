@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome to Django models!!</title>
+    <link rel="stylesheet" href="{% static "css/first.css" %}"/>
+  </head>
+  <body>
+    <h1>This is how models should be displayed!!!</h1>
+    <div class="django">
+      {% if all_topics %}
+      <table>
+        <thead>
+          <th>Topic Name</th>
+        </thead>
+        {% for i in all_topics %}
+          <tr>
+            <td> {{i.topic_name}} </td>
+          </tr>
+        {% endfor %}
+      </table>
+      {% else %}
+      <p>NO RECORDS FOUND!!</p>
+      {% endif %}
+    </div>
+  </body>
+</html>
